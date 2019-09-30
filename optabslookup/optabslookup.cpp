@@ -8,7 +8,7 @@
 char brightness[] = { 32, 16, 6, 2, 1 }; 
 char numberBright = sizeof(brightness) - 1;
 char shiftNegMask = sizeof(brightness[0]) * 8 - 1;
-// 11 operations 1 parallel ~9 * latency
+// 11 operations 1 parallel ~10 * latency
 unsigned char brightness_abs(char led, char pos)
 {
    char diff = led - pos;
