@@ -3,7 +3,7 @@
 #include "pch.h"
 #include "optabslookup.h"
 
-// rules abs maps to 0 to (n-1) outside equals n
+// rules abs maps 0 to (n-1) outside equals n
 char brightness[] = { 32, 16, 6, 2, 1 }; 
 char numberBright = sizeof(brightness) - 1;
 char shiftNegMask = sizeof(brightness[0]) * 8 - 1;
@@ -14,10 +14,6 @@ unsigned char brightness_shiftless_abs(char led, char pos)
    return brightness[ numberBright > absDiff ? absDiff : numberBright];
 }
 
-// rules abs maps to 0 to (n-1) outside equals n
-char brightness[] = { 32, 16, 6, 2, 1 }; 
-char numberBright = sizeof(brightness) - 1;
-char shiftNegMask = sizeof(brightness[0]) * 8 - 1;
 // 11 operations 1 parallel ~10 * latency
 unsigned char brightness_abs(char led, char pos)
 {
